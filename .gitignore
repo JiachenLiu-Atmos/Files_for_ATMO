@@ -1,0 +1,13 @@
+__pycache__/
+.DS_Store
+*.pyc
+*.swp
+.*.swp
+*.log
+*.out
+
+# Large atmospheric model/data outputs should usually stay outside Git.
+*.nc
+*.ncdf
+*.h5
+*.hdf

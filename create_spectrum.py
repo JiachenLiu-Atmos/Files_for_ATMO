@@ -64,7 +64,7 @@ nu_hd209 = nc_hd209.variables['nu'][:]
 hnu_hd209 = nc_hd209.variables['hnu'][:]
 
 nc_file_new = 'your_file_path/HD86226.ncdf'
-c = Dataset(nc_file_new, 'r+')
+nc_new = Dataset(nc_file_new, 'r+')
 nu_new = nc_new.variables['nu'][:]
 hnu_new = nc_new.variables['hnu'][:]
 #%%
