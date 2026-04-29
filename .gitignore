@@ -9,5 +9,7 @@ __pycache__/
 # Large atmospheric model/data outputs should usually stay outside Git.
 *.nc
 *.ncdf
+!HD86226.ncdf
+!kurucz_hd209.ncdf
 *.h5
 *.hdf
