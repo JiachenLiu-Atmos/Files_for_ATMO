@@ -1,0 +1,78 @@
+! Namelist file for the HD86226c chem_eq: calculating chemical equilibrium abundances and the self-consistent PT profile
+
+&UNITS 
+/
+
+&PARAM 
+Debug  = 0
+fout = 'out_chemeq_out_1Z_100K_05fred.ncdf'
+ftemp = 'temp_chemeq_out_1Z_100K_05fred.ncdf'
+fin = 'temp_chemeq_out_1MdH_100K_05fred.ncdf'
+/
+
+&EOS gamma = 0/
+
+&GRID 
+ndepth = 63
+!Rp = 0.193 ! HD86226c: Teske et al. (2020)
+!Tinit = 800
+Teff = 100 ! from Kahle et al. (2025)
+corr_k = t
+nband = 32
+logg = 3.184 ! HD86226c: 15.26 m/s2
+!isothermal = f
+Taumax = 4000.
+
+/
+
+&CHEMISTRY 
+chem  = 'eq'
+fAin = 'chem_example.ncdf'
+!fAin  = 'HD86226c_chemeq_out_1000MdH_100K_05fred_noc.ncdf'
+fAeqout  = 'HD86226c_chemeq_out_1Z_100K_05fred.ncdf'
+MdH =0
+calc_cp_chem = t
+!cp_chem_reac = t
+print_chem = f
+!chem_smooth = t
+rainout = f
+/
+
+&CHEM_NEQ
+/
+
+&CHEM_RELAX
+/
+
+&RADTRANS 
+rstar = 1.053
+rorbit = 0.049
+firad='HD86226.ncdf'
+irrad = t
+scatter = t
+fred = 0.5
+/
+
+
+&OPACITY 
+nkap =12
+!nkap =7
+kap_smooth = t
+/
+
+&SOLVER 
+solve_hydro  = t
+solve_energy = t
+!minstep      = 1.0E-1
+minstep = 1
+!maxstep      = 9.0E-1
+accuracy     = 1.0E-3
+psurf        = 1E-8
+print_err = f
+!transmission_spectrum = t
+/
+ 
+&CONVECTION 
+alpha = 1.5
+eps_gradad = 1e-3
+/
